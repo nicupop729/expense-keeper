@@ -71,4 +71,7 @@ group :test do
   gem 'webdrivers'
 end
 
+# Gems added after initial installation
+
+gem 'devise'
 gem 'rubocop', '>= 1.0', '< 2.0'
