@@ -8,7 +8,7 @@
   <% @categories.each do |category| %>
     <%= render category %>
     <p>
-      <%= link_to "Show this category", category %>
+      <%= link_to "Show this category", add_expense_path(category.name) %>
     </p>
   <% end %>
 </div>
