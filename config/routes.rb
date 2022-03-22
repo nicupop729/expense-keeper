@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'pages/index', to: 'pages#index'
-
   devise_for :users
 
   resources :categories
@@ -8,5 +6,5 @@ Rails.application.routes.draw do
 
   get 'add_expense/:category_name', to: 'expenses#index', as: 'add_expense'
 
-  root "pages#index"
+  root "home#index"
 end
