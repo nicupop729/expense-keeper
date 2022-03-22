@@ -3,6 +3,8 @@
 <%= render @category %>
 
 <div>
+  <%= link_to "New expense", new_expense_path %>
+
   <%= link_to "Edit this category", edit_category_path(@category) %> |
   <%= link_to "Back to categories", categories_path %>
 
