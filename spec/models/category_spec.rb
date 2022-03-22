@@ -5,11 +5,11 @@ RSpec.describe Category, type: :model do
     User.create!(name: 'Nicu', email: 'nicu@gmail.com', password: 'password')
   end
 
-  subject { Category.new(user: user, name: 'Food', icon: 'http://icon.com/user/1') }
+  subject { Category.new(user:, name: 'Food', icon: 'http://icon.com/user/1') }
 
   before do
-    Category.create!(user: user, name: 'Utilities', icon: 'http://icon.com/user/2')
-    subject.save 
+    Category.create!(user:, name: 'Utilities', icon: 'http://icon.com/user/2')
+    subject.save
   end
   it 'returns 2 categories' do
     expect(Category.count).to eq(2)
@@ -32,4 +32,4 @@ RSpec.describe Category, type: :model do
   it 'category belongs to user' do
     expect(subject.user).to be(user)
   end
-end 
+end

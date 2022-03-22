@@ -29,4 +29,4 @@ RSpec.describe User, type: :model do
     subject.name = 'qwertyuiopasdfghjklzxcvbnm'
     expect(subject).to_not be_valid
   end
-end 
+end

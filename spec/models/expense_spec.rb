@@ -6,11 +6,11 @@ RSpec.describe Expense, type: :model do
   end
 
   subject do
-    Expense.new(user: user, name: 'New TV', amount: 700)
+    Expense.new(user:, name: 'New TV', amount: 700)
   end
 
   before do
-    Expense.create!(user: user, name: 'Porche Car', amount: 999999)
+    Expense.create!(user:, name: 'Porche Car', amount: 999_999)
     subject.save
   end
 
@@ -34,7 +34,7 @@ RSpec.describe Expense, type: :model do
   end
 
   it 'amount is not valid if bigger than 999.999' do
-    subject.amount = 1000000
+    subject.amount = 1_000_000
     expect(subject).to_not be_valid
   end
 
@@ -46,4 +46,4 @@ RSpec.describe Expense, type: :model do
   it 'belongs to a user' do
     expect(subject.user).to be(user)
   end
-end 
+end

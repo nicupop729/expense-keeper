@@ -4,5 +4,5 @@ class Expense < ApplicationRecord
   has_many :categories, through: :category_expenses
 
   validates :name, presence: true, length: { in: 3..25 }
-  validates :amount, presence: true, numericality: { greater_than: 0, less_than: BigDecimal(10**6)}
+  validates :amount, presence: true, numericality: { greater_than: 0, less_than: BigDecimal(10**6) }
 end
