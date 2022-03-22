@@ -14,6 +14,8 @@
  *= require_self
  */
 
+/* General settings */
+
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +39,18 @@ body {
 .green-colour {
   background-color: #5fb523;
 }
+
+/* Yield */
+
+.yield {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header */
 
 .header {
   height: 10rem;
@@ -75,13 +89,7 @@ body {
   cursor: pointer;
 }
 
-.padd {
-  margin: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* Home Page */
 
 .home-page {
   display: flex;
