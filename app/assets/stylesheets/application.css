@@ -160,3 +160,9 @@ body {
 .form-links:visited {
   color: blue;
 }
+
+/* Caterories index */
+
+.titles {
+  font-size: 25px;
+}

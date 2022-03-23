@@ -1,11 +1,10 @@
-<div id="<%= dom_id category %>">
+<div id="<%= dom_id category %>" class="card-category">
+  <div>
+    <%= image_tag (category.icon), class:"cat-img"%>
+  </div>
+
   <p>
-    <strong>Name:</strong>
     <%= category.name %>
   </p>
 
-  <p>
-    <strong>Icon:</strong>
-    <%= category.icon %>
-  </p>
 </div>
