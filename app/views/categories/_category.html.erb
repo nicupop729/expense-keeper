@@ -7,4 +7,12 @@
     <%= category.name %>
   </p>
 
+  <div>
+    <p>Category total: <%= category_total(category) %></p>
+    <div>
+    <%= link_to "Edit", edit_category_path(category) %>
+    <%= button_to "Delete", category, method: :delete %>
+    </div>
+  </div>
+
 </div>

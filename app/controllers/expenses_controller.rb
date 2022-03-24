@@ -7,6 +7,7 @@ class ExpensesController < ApplicationController
     @category_name = params[:category_name]
     @category = current_user.categories.find_by(name: @category_name)
     @expenses = @category.expenses.order(created_at: :desc)
+    @total_expenses = @category.expenses.sum(:amount)
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -23,7 +24,11 @@ class ExpensesController < ApplicationController
   end
 
   # GET /expenses/1/edit
-  def edit; end
+  def edit
+    @expense = Expense.new
+    @category_expense = CategoryExpense.new
+    @categories = current_user.categories
+  end
 
   # POST /expenses or /expenses.json
   def create
@@ -58,10 +63,11 @@ class ExpensesController < ApplicationController
 
   # DELETE /expenses/1 or /expenses/1.json
   def destroy
+    @category = Category.find(expense_params[:category_id])
     @expense.destroy
 
     respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      format.html { redirect_to add_expense_url(@category.name), notice: 'Expense was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

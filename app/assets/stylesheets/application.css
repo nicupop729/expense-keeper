@@ -44,10 +44,6 @@ body {
 
 .yield {
   margin: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Header */
@@ -165,4 +161,18 @@ body {
 
 .titles {
   font-size: 25px;
+}
+
+.cat-img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.card-category {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #3778c2;
 }
