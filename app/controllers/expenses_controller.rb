@@ -7,6 +7,7 @@ class ExpensesController < ApplicationController
     @category_name = params[:category_name]
     @category = current_user.categories.find_by(name: @category_name)
     @expenses = @category.expenses.order(created_at: :desc)
+    @total_expenses = @category.expenses.sum(:amount)
   end
 
   # GET /expenses/1 or /expenses/1.json
