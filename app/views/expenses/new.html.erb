@@ -1,9 +1,12 @@
-<h1>New expense</h1>
-
-<%= render "form", expense: @expense %>
-
-<br>
-
 <div>
-  <%= link_to "Back to categories", categories_path %>
+  <div class="form-wrapper">
+    <%= link_to :back, method: :get do %>
+      <span class="back-btn"><</span> 
+    <% end %>
+  </div> 
+
+  <%= render "form", expense: @expense %>
+
+  <br>
+
 </div>

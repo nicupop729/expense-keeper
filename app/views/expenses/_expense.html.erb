@@ -1,11 +1,16 @@
-<div id="<%= dom_id expense %>">
-  <p>
-    <strong>Name:</strong>
-    <%= expense.name %>
+<div id="<%= dom_id expense %>", class="card-category">
+ 
+    
+    <h2><%= expense.name %></h2>
+
+
+  <p class="date">
+        <%= expense.created_at.strftime("%B %d %Y, %l:%M%P") %>
   </p>
 
   <p>
     <strong>Amount:</strong>
-    <%= expense.amount %>
+    $<%= expense.amount %>
   </p>  
+
 </div>

@@ -1,16 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<div class="expense-wrapper">
 
-<h1>Category: <%= @category.name %></h1>
+  <%= link_to categories_path do %> <span class="back-btn"><</span> <% end %>
+  <div class="wrapper">
+    <p style="color: green"><%= notice %></p>
 
-<div id="expenses">
-  <% @expenses.each do |expense| %>
-    <%= render expense %>
-    <p>
-      <%= link_to "Show this expense", expense %>
-    </p>
-    
-  <% end %>
+    <h1>Category: <%= @category.name %></h1>
+    <div class="total-amount">
+      <span><strong>Total amount:</strong></span>
+      <h3>$<%= @total_expenses %></h3>
+    </div>
+
+    <div id="expenses">
+      <ul class="categories_list">
+        <% @expenses.each do |expense| %>
+          <li>
+            <%= render expense %>        
+          </li>
+        <% end %>
+      </ul>  
+    </div>     
+    <%= link_to "New expense", new_expense_path, class:"new-cat_btn" %>
+  </div>
 </div>
 
-<%= link_to "New expense", new_expense_path %> |
-<%= link_to "Back to categories", categories_path %>

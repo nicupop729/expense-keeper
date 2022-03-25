@@ -1,16 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<div class="wrapper">
+  <p style="color: green"><%= notice %></p>
 
-<%= button_to "Logout", destroy_user_session_path, method: :delete %>
+  <h1 class="titles">Categories</h1>
 
-<h1>Categories</h1>
+  <div id="categories">
+      <ul class="categories_list">          
+    <% @categories.each do |category| %>
+          <li>
+        <%= link_to add_expense_path(category.name) do %>
+            <%= render category %>
+        <% end %> 
+          </li>
+    <% end %>
+      </ul>     
+  </div>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", add_expense_path(category.name) %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New category", new_category_path %>
+  <%= link_to "New category", new_category_path, class:"new-cat_btn" %>
+<div>

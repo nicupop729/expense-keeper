@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_expense, only: %i[show edit update destroy]
 
   # GET /expenses or /expenses.json
@@ -6,6 +7,7 @@ class ExpensesController < ApplicationController
     @category_name = params[:category_name]
     @category = current_user.categories.find_by(name: @category_name)
     @expenses = @category.expenses.order(created_at: :desc)
+    @total_expenses = @category.expenses.sum(:amount)
   end
 
   # GET /expenses/1 or /expenses/1.json
@@ -21,9 +23,6 @@ class ExpensesController < ApplicationController
     @categories = current_user.categories
   end
 
-  # GET /expenses/1/edit
-  def edit; end
-
   # POST /expenses or /expenses.json
   def create
     @expense = Expense.new(name: expense_params[:name], amount: expense_params[:amount], user: current_user)
@@ -38,30 +37,6 @@ class ExpensesController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /expenses/1 or /expenses/1.json
-  def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        @category = Category.find(expense_params[:category_id])
-        format.html { redirect_to add_expense_url(@category.name), notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /expenses/1 or /expenses/1.json
-  def destroy
-    @expense.destroy
-
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
