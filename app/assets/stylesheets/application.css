@@ -40,12 +40,6 @@ body {
   background-color: #5fb523;
 }
 
-/* Yield */
-
-.yield {
-  margin: 3rem;
-}
-
 /* Header */
 
 .header {
@@ -85,6 +79,50 @@ body {
   cursor: pointer;
 }
 
+/* Devise Container */
+
+.devise-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-container form {
+  width: 90%;
+  max-width: 50rem;
+}
+
+.field {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.field .input {
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.field input:focus {
+  outline: none;
+  border: 1px solid #3778c2;
+}
+
+.form-btns {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 10rem;
+  height: 5rem;
+  margin-bottom: 3rem;
+}
+
+.form-links:visited {
+  color: blue;
+}
+
 /* Home Page */
 
 .home-page {
@@ -93,7 +131,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4rem;
-  margin: auto;
+  padding: 3rem;
   width: 100%;
   padding-top: 50vh;
 }
@@ -124,37 +162,6 @@ body {
   text-decoration: none;
   font-size: 1.5rem;
   background-color: #5fb523;
-}
-
-/* Authentication */
-
-.field {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.field input {
-  height: 3rem;
-  border: none;
-  border-radius: 5px;
-}
-
-.field input:focus {
-  outline: none;
-  border: 1px solid #3778c2;
-}
-
-.form-btns {
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  width: 10rem;
-  height: 5rem;
-  margin-bottom: 3rem;
-}
-
-.form-links:visited {
-  color: blue;
 }
 
 /* Caterories index */
