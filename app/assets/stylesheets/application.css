@@ -202,7 +202,8 @@ a:visited {
   padding-left: 0.5rem;
 }
 
-#categories {
+#categories,
+#expenses {
   margin-bottom: 10rem;
 }
 
@@ -255,4 +256,30 @@ a:visited {
 
 .date {
   margin-top: 3rem;
+}
+
+.back-btn {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #3778c2;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.expense-wrapper {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.total-amount {
+  width: 100vw;
+  height: 5rem;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  justify-content: space-between;
 }
