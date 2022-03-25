@@ -28,8 +28,19 @@ html {
 
 body {
   background-color: #f1f3f2;
-  color: #434b54;
   font-family: sans-serif;
+  color: #434b54;
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #434b54;
+}
+
+a:visited {
+  color: #434b54;
 }
 
 .blue-colour {
@@ -58,6 +69,10 @@ body {
   text-decoration: none;
 }
 
+.logo_title:visited {
+  color: #fff;
+}
+
 .header_auth {
   display: flex;
   flex-direction: column;
@@ -66,9 +81,12 @@ body {
 }
 
 .header_auth a {
-  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.header_auth a:visited {
+  color: #fff;
 }
 
 .header_auth button {
@@ -166,20 +184,75 @@ body {
 
 /* Caterories index */
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .titles {
   font-size: 25px;
+  margin-bottom: 2rem;
 }
 
 .cat-img {
-  width: 5rem;
-  height: 5rem;
+  width: 7rem;
+  height: 7rem;
+  padding-left: 0.5rem;
+}
+
+#categories {
+  margin-bottom: 10rem;
+}
+
+.categories_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  width: 100%;
 }
 
 .card-category {
-  width: 100%;
+  width: 85vw;
+  max-width: 60rem;
+  height: 10rem;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #3778c2;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  max-width: 60rem;
+}
+
+.new-cat_btn {
+  position: absolute;
+  width: 100vw;
+  height: 8rem;
+  bottom: 0;
+  left: 0;
+  background-color: #5fb523;
+}
+
+.new-cat_btn:link,
+.new-cat_btn:visited {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 3.5rem;
+}
+
+.date {
+  margin-top: 3rem;
 }

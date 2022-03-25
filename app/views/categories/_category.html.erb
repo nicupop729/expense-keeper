@@ -1,18 +1,18 @@
 <div id="<%= dom_id category %>" class="card-category">
-  <div>
-    <%= image_tag (category.icon), class:"cat-img"%>
-  </div>
-
-  <p>
-    <%= category.name %>
-  </p>
-
-  <div>
-    <p>Category total: <%= category_total(category) %></p>
     <div>
-    <%= link_to "Edit", edit_category_path(category) %>
-    <%= button_to "Delete", category, method: :delete %>
+      <%= image_tag (category.icon), class:"cat-img"%>
     </div>
-  </div>
+
+    <div>
+      <h2>
+        <%= category.name %>
+      </h2>
+      <p class="date">
+        <%= category.created_at.strftime("%B %d %Y, %l:%M%P") %>
+      </p>
+    </div>
+    <div>
+      <p>Category total: <%= category_total(category) %></p>
+    </div>
 
 </div>

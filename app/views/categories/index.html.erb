@@ -1,15 +1,19 @@
-<div>
+<div class="wrapper">
   <p style="color: green"><%= notice %></p>
 
   <h1 class="titles">Categories</h1>
 
   <div id="categories">
-    <% @categories.each do |category| %>            
-      <%= link_to add_expense_path(category.name) do %>
-        <%= render category %>
-      <% end %>      
+      <ul class="categories_list">          
+    <% @categories.each do |category| %>
+          <li>
+        <%= link_to add_expense_path(category.name) do %>
+            <%= render category %>
+        <% end %> 
+          </li>
     <% end %>
+      </ul>     
   </div>
 
-  <%= link_to "New category", new_category_path %>
+  <%= link_to "New category", new_category_path, class:"new-cat_btn" %>
 <div>
