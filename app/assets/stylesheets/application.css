@@ -266,7 +266,8 @@ a:visited {
   font-size: 2rem;
 }
 
-.expense-wrapper {
+.expense-wrapper,
+.form-wrapper {
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -282,4 +283,35 @@ a:visited {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   justify-content: space-between;
+}
+
+.app-form {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-form h1 {
+  margin-bottom: 1rem;
+}
+
+.app-form .input {
+  width: 100vw;
+  max-width: 60rem;
+  height: 3rem;
+  padding: 1rem;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.app-form .input:focus {
+  outline: none;
+  border: 1px solid #3778c2;
+}
+
+.width-btn {
+  width: 95vw;
+  max-width: 60rem;
 }
