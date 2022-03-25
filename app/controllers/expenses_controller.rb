@@ -23,14 +23,7 @@ class ExpensesController < ApplicationController
     @categories = current_user.categories
   end
 
-  # GET /expenses/1/edit
-  def edit
-    @expense = Expense.new
-    @category_expense = CategoryExpense.new
-    @categories = current_user.categories
-  end
-
-  # POST /expenses or /expenses.json
+   # POST /expenses or /expenses.json
   def create
     @expense = Expense.new(name: expense_params[:name], amount: expense_params[:amount], user: current_user)
 
@@ -44,31 +37,6 @@ class ExpensesController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # PATCH/PUT /expenses/1 or /expenses/1.json
-  def update
-    respond_to do |format|
-      if @expense.update(expense_params)
-        @category = Category.find(expense_params[:category_id])
-        format.html { redirect_to add_expense_url(@category.name), notice: 'Expense was successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /expenses/1 or /expenses/1.json
-  def destroy
-    @category = Category.find(expense_params[:category_id])
-    @expense.destroy
-
-    respond_to do |format|
-      format.html { redirect_to add_expense_url(@category.name), notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
