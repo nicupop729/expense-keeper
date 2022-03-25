@@ -33,11 +33,6 @@ RSpec.describe Expense, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'amount is not valid if bigger than 999.999' do
-    subject.amount = 1_000_000
-    expect(subject).to_not be_valid
-  end
-
   it 'amount is not valid if 0 or less' do
     subject.amount = 0
     expect(subject).to_not be_valid
