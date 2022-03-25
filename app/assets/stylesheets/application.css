@@ -315,3 +315,16 @@ a:visited {
   width: 95vw;
   max-width: 60rem;
 }
+
+#expense_category_id {
+  width: 100vw;
+  max-width: 60rem;
+  height: 4rem;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+#expense_category_id:focus {
+  outline: none;
+  border: 1px solid #3778c2;
+}
