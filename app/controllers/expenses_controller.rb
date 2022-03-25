@@ -23,7 +23,7 @@ class ExpensesController < ApplicationController
     @categories = current_user.categories
   end
 
-   # POST /expenses or /expenses.json
+  # POST /expenses or /expenses.json
   def create
     @expense = Expense.new(name: expense_params[:name], amount: expense_params[:amount], user: current_user)
 
