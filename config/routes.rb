@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :categories, only: [:index, :new, :create]
+  resources :expenses, only: [:show, :new, :create]
+
+  get 'add_expense/:category_name', to: 'expenses#index', as: 'add_expense'
+
+  root "home#index"
 end

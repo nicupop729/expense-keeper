@@ -1,0 +1,29 @@
+<%= form_with(model: @expense, class: "app-form", local: true) do |form| %>
+  <% if expense.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+
+      <ul>
+        <% expense.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>New expense</h1>
+
+  <div>
+    <%= form.text_field :name, required: true, placeholder: 'Expense Name', class: "input" %>
+  </div>
+
+  <div>
+    <%= form.text_field :amount, required: true, placeholder: 'Amount: $', class: "input" %>
+  </div>
+
+  <%= form.select :category_id, options_from_collection_for_select(@categories, :id, :name), label: "Select category" %>
+
+  <div>
+    <%= form.submit nil, :class => "form-btns green-colour width-btn" %>
+  </div>
+<% end %>

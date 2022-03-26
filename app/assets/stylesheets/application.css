@@ -13,3 +13,318 @@
  *= require_tree .
  *= require_self
  */
+
+/* General settings */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f1f3f2;
+  font-family: sans-serif;
+  color: #434b54;
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: #434b54;
+}
+
+a:visited {
+  color: #434b54;
+}
+
+.blue-colour {
+  background-color: #3778c2;
+}
+
+.green-colour {
+  background-color: #5fb523;
+}
+
+/* Header */
+
+.header {
+  height: 10rem;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo_title:visited {
+  color: #fff;
+}
+
+.home-page a {
+  color: #fff;
+  text-transform: uppercase;
+  padding-top: 1.5rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  background-color: #5fb523;
+}
+
+.header_auth {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.header_auth a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header_auth a:visited {
+  color: #fff;
+}
+
+.header_auth button {
+  color: #fff;
+  text-transform: uppercase;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+/* Devise Container */
+
+.devise-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.devise-container form {
+  width: 90%;
+  max-width: 50rem;
+}
+
+.field {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.field .input {
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.field input:focus {
+  outline: none;
+  border: 1px solid #3778c2;
+}
+
+.form-btns {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  width: 10rem;
+  height: 5rem;
+  margin-bottom: 3rem;
+}
+
+.form-links:visited {
+  color: blue;
+}
+
+/* Home Page */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+  width: 100%;
+  padding-top: 50vh;
+}
+
+.home-page > * {
+  width: 100%;
+  height: 5rem;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.home-page .button_to {
+  background-color: #3778c2;
+  cursor: pointer;
+}
+
+.home-page button {
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 1.5rem;
+}
+
+/* Caterories index */
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.titles {
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+
+.cat-img {
+  width: 7rem;
+  height: 7rem;
+  padding-left: 0.5rem;
+}
+
+#categories,
+#expenses {
+  margin-bottom: 10rem;
+}
+
+.categories_list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  width: 100%;
+}
+
+.card-category {
+  width: 85vw;
+  max-width: 60rem;
+  height: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+  position: relative;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+}
+
+.card-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 85vw;
+  max-width: 60rem;
+}
+
+.new-cat_btn {
+  position: absolute;
+  width: 100vw;
+  height: 8rem;
+  bottom: 0;
+  left: 0;
+  background-color: #5fb523;
+}
+
+.new-cat_btn:link,
+.new-cat_btn:visited {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 3.5rem;
+}
+
+.date {
+  margin-top: 3rem;
+}
+
+.back-btn {
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #3778c2;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.expense-wrapper,
+.form-wrapper {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.total-amount {
+  width: 100vw;
+  height: 5rem;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-form {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-form h1 {
+  margin-bottom: 1rem;
+}
+
+.app-form .input {
+  width: 100vw;
+  max-width: 60rem;
+  height: 3rem;
+  padding: 1rem;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.app-form .input:focus {
+  outline: none;
+  border: 1px solid #3778c2;
+}
+
+.width-btn {
+  width: 95vw;
+  max-width: 60rem;
+}
+
+#expense_category_id {
+  width: 100vw;
+  max-width: 60rem;
+  height: 4rem;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+#expense_category_id:focus {
+  outline: none;
+  border: 1px solid #3778c2;
+}

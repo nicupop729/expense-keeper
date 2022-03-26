@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <header class="header blue-colour">
+      <h3 class="logo"><%= link_to "ExpenseKeeper", categories_path, class: "logo_title" %></h3>
+      <div class="header_auth">
+        <% if current_user %>
+            <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+            <%= link_to 'Log In', new_user_session_path %>
+            <%= link_to 'Sign Up',  new_user_registration_path %>
+        <% end %>
+      </div>
+    </header>
+  
     <%= yield %>
+   
   </body>
 </html>
