@@ -8,7 +8,7 @@
 ![screenshot](./app/assets/images/app-2.png)
 ![screenshot](./app/assets/images/app-3.png)
 
-ExpenseTrackrr is an app built with Ruby on Rails using the MVC architecture. The app allows users to track their expenses while grouping them into categories.
+ExpenseKeeper is an app built with Ruby on Rails using the MVC architecture. The app allows users to track their expenses while grouping them into categories.
 
 ## Built With
 
